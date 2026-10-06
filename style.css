@@ -1,16 +1,18 @@
+/* ========== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ========== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* ЦВЕТА САЙТА — меняй тут, если хочешь другие */
 :root {
-    --green-bg: #b9e5c8;   /* светло-зелёный фон hero */
-    --green-dark: #14502e;  /* тёмно-зелёный (текст, футер) */
-    --green-btn: #1e5d3a;   /* кнопки */
-    --green-light: #c8ebd5;   /* светлый зелёный (offer, badge) */
-    --text-dark: #1a1a1a;
-    --text-gray: #555;
+    --green-bg: #b9e5c8;       /* светло-зелёный фон hero и header */
+    --green-dark: #14502e;     /* тёмно-зелёный (заголовки, футер) */
+    --green-btn: #1e5d3a;      /* кнопки */
+    --green-light: #c8ebd5;    /* светлый зелёный (offer, badge, отзыв) */
+    --text-dark: #1a1a1a;      /* основной текст */
+    --text-gray: #555;         /* серый текст */
 }
 
 body {
@@ -26,94 +28,5 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-/* ---------- Шапка ---------- */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px 60px;
-    background: var(--green-bg);
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: var(--green-dark);
-}
-
-.menu {
-    display: flex;
-    gap: 40px;
-}
-
-.menu a {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: var(--green-dark);
-    transition: opacity 0.2s;
-}
-
-.menu a:hover {
-    opacity: 0.6;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.cart {
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    position: relative;
-    color: var(--green-dark);
-}
-
-.cart-count {
-    position: absolute;
-    top: -5px;
-    right: -8px;
-    background: #4ade80;
-    color: #fff;
-    font-size: 10px;
-    font-weight: 600;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.login-btn {
-    background: transparent;
-    border: 1.5px solid var(--green-dark);
-    color: var(--green-dark);
-    padding: 10px 30px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.login-btn:hover {
-    background: var(--green-dark);
-    color: #fff;
-}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
