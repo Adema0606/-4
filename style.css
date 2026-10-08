@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
 /* ========== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ========== */
 * {
     box-sizing: border-box;
@@ -5,7 +12,7 @@
     padding: 0;
 }
 
-/* ЦВЕТА САЙТА — меняй тут, если хочешь другие */
+/* ЦВЕТА САЙТА*/
 :root {
     --green-bg: #b9e5c8;       /* светло-зелёный фон hero и header */
     --green-dark: #14502e;     /* тёмно-зелёный (заголовки, футер) */
@@ -20,6 +27,8 @@ body {
     color: var(--text-dark);
     background: #fff;
     line-height: 1.5;
+    height: 100vh;        /* ← высота = высота экрана */
+    overflow: hidden;     /* ← запрет прокрутки */
 }
 
 h1, h2, h3 {
@@ -30,3 +39,170 @@ h1, h2, h3 {
 
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
+
+/* ========== ШАПКА ========== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 60px;         
+    background: var(--green-bg);
+  
+}
+
+/* Логотип */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--green-dark);
+    flex-shrink: 0;
+    margin-left: 150px;
+    
+}
+
+/* Меню */
+.menu {
+    display: flex;
+    gap: 40px;
+}
+
+.menu a {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--green-dark);
+    transition: opacity 0.2s;
+}
+
+.menu a:hover { opacity: 0.6; }
+
+/* Правая часть — корзина + кнопка */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-shrink: 0;
+    margin-right: 150px;
+}
+
+/* Иконка корзины */
+.cart {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    position: relative;
+    color: var(--green-dark);
+    flex-shrink: 0;
+    margin-right: 0px;
+}
+
+/* Зелёный кружок с числом товаров */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: #4ade80;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 150px;
+}
+
+/* Кнопка LOGIN с рамкой */
+.login-btn {
+    background: transparent;
+    border: 1.5px solid var(--green-dark);
+    color: var(--green-dark);
+    padding: 10px 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.login-btn:hover {
+    background: var(--green-dark);
+    color: #fff;
+}
+
+/* ========== HERO ========== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px 60px 30px;    
+    background: var(--green-bg);
+    min-height: calc(100vh - 80px);
+}
+
+.hero-text { max-width: 520px; }
+
+/* Большой заголовок */
+.hero-text h1 {
+    font-size: 54px;             
+    line-height: 1.1;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    margin-left: 150px;
+}
+/* Абзац под заголовком */
+.hero-text p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 420px;
+    font-size: 18px;
+    color: #267D49;
+    line-height: 220.00000000000003%;
+    margin-bottom: 35px;
+    max-width: 400px;
+    flex-shrink: 0;
+    margin-left: 150px;
+}
+/* Тёмно-зелёная кнопка */
+.explore-btn {
+    background: var(--green-btn);
+    color: #fff;
+    border: none;
+    padding: 16px 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 150px;
+
+/* ↓ тень под кнопкой */
+    box-shadow: 0 10px 22px rgba(30, 93, 58, 0.35);
+}
+
+.explore-btn:hover {
+    background: #174a2e;
+    box-shadow: 0 14px 28px rgba(21, 87, 51, 0.45);   /* тень усиливается при наведении */
+    transform: translateY(-2px);                        /* кнопка чуть приподнимается */
+}
+
+.hero-image { flex-shrink: 0; }
+
+/* Картинка девушки */
+.hero-image img {
+    width: 100%;
+    max-width: 400px;     
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    flex-shrink: 0;
+    margin-right: 150px;
+}
