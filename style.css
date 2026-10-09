@@ -45,64 +45,63 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 60px;         
+    padding: 0 100px;              /* ← уменьшил с 174px, чтобы не прилипало */
+    height: 100px;
     background: var(--green-bg);
-  
 }
 
-/* Логотип */
+/* Логотип — жирнее */
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 1000;              /* ← 900 вместо 700 = жирнее */
     color: var(--green-dark);
-    flex-shrink: 0;
-    margin-left: 150px;
-    
+    line-height: 1;
+    letter-spacing: -0.5px;
+    margin-left: 120px;
 }
 
-/* Меню */
+/* Меню — крупнее */
 .menu {
     display: flex;
-    gap: 40px;
+    gap: 45px;
 }
 
 .menu a {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-size: 15px;               /* ← было 13px, стало 15px */
+    font-weight: 500;              /* ← жирнее */
+    letter-spacing: 2px;
     color: var(--green-dark);
     transition: opacity 0.2s;
 }
 
 .menu a:hover { opacity: 0.6; }
 
-/* Правая часть — корзина + кнопка */
 .header-right {
     display: flex;
     align-items: center;
     gap: 30px;
-    flex-shrink: 0;
-    margin-right: 150px;
+    margin-right: 120px;   /* ← ПОЛОЖИТЕЛЬНОЕ число = сдвиг ВЛЕВО */
 }
 
-/* Иконка корзины */
 .cart {
     background: none;
     border: none;
-    font-size: 22px;
     cursor: pointer;
     position: relative;
-    color: var(--green-dark);
-    flex-shrink: 0;
-    margin-right: 0px;
+    display: flex;
+    align-items: center;
 }
 
-/* Зелёный кружок с числом товаров */
+.cart img {
+    width: 28px;
+    height: auto;
+}
+
 .cart-count {
     position: absolute;
-    top: -5px;
-    right: -8px;
+    top: -4px;
+    right: -6px;
     background: #4ade80;
     color: #fff;
     font-size: 10px;
@@ -113,19 +112,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    margin-right: 150px;
 }
 
-/* Кнопка LOGIN с рамкой */
+/* Кнопка LOGIN — рамка жирнее */
 .login-btn {
     background: transparent;
-    border: 1.5px solid var(--green-dark);
+    border: 2px solid var(--green-dark);   /* ← было 1.5px, стало 2px */
     color: var(--green-dark);
-    padding: 10px 30px;
+    padding: 8px 30px;
     font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.2s;
@@ -139,70 +136,91 @@ header {
 /* ========== HERO ========== */
 .hero {
     display: flex;
-    align-items: center;
+    align-items: flex-start;        /* ← фото и текст начинаются с одной линии сверху */
     justify-content: space-between;
-    gap: 40px;
-    padding: 20px 60px 30px;    
+    gap: 200px;
+    padding: 40px 210px 40px;       /* ← сверху 60px = общий отступ для обоих */
     background: var(--green-bg);
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 100px);
 }
 
-.hero-text { max-width: 520px; }
-
-/* Большой заголовок */
-.hero-text h1 {
-    font-size: 54px;             
-    line-height: 1.1;
-    margin-bottom: 20px;
+/* ЛЕВАЯ часть — текст */
+.hero-text {
+    max-width: 520px;
     flex-shrink: 0;
-    margin-left: 150px;
+    /* padding-top убран — оба блока стартуют с одной линии */
 }
-/* Абзац под заголовком */
+
+.hero-text h1 {
+    font-size: 58px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: var(--green-dark);
+}
+
 .hero-text p {
     font-family: 'Poppins', sans-serif;
-    font-weight: 420px;
-    font-size: 18px;
-    color: #267D49;
-    line-height: 220.00000000000003%;
-    margin-bottom: 35px;
-    max-width: 400px;
-    flex-shrink: 0;
-    margin-left: 150px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #267d49;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    max-width: 420px;
 }
-/* Тёмно-зелёная кнопка */
+
 .explore-btn {
     background: var(--green-btn);
     color: #fff;
     border: none;
-    padding: 16px 40px;
+    padding: 18px 42px;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1.5px;
     cursor: pointer;
     transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-    flex-shrink: 0;
-    margin-left: 150px;
-
-/* ↓ тень под кнопкой */
     box-shadow: 0 10px 22px rgba(30, 93, 58, 0.35);
 }
 
 .explore-btn:hover {
     background: #174a2e;
-    box-shadow: 0 14px 28px rgba(21, 87, 51, 0.45);   /* тень усиливается при наведении */
-    transform: translateY(-2px);                        /* кнопка чуть приподнимается */
+    box-shadow: 0 14px 28px rgba(21, 87, 51, 0.45);
+    transform: translateY(-2px);
 }
 
-.hero-image { flex-shrink: 0; }
-
-/* Картинка девушки */
-.hero-image img {
-    width: 100%;
-    max-width: 400px;     
-    height: auto;
-    border-radius: 20px;
-    display: block;
+/* ---------- Правая часть ---------- */
+.hero-image {
+    position: relative;
     flex-shrink: 0;
-    margin-right: 150px;
+}
+
+
+/* Фото — уменьшено, пропорции сохранены */
+.hero-photo {
+    width: 410px;                   
+    height: 530px;                   
+    object-fit: cover;
+    display: block;
+    border-radius: 120px 20px 120px 20px;   /* ← закругления сохранены, чуть уменьшены пропорционально */
+}
+
+/* Точки — уменьшила до 80px */
+.dots {
+    position: absolute;
+    width: 90px;                         
+    height: auto;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Точки СПРАВА — вплотную к фото */
+.dots-1 {
+    top: 20%;
+    right: 10px;
+} 
+
+/* Точки СЛЕВА СНИЗУ */
+.dots-2 {
+    bottom: 10%;
+    left: 10px;
 }
