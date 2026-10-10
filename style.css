@@ -415,3 +415,97 @@ header {
     margin-left: 5px;
     font-size: 16px;
 }
+
+/* ========== EXCLUSIVE OFFER ========== */
+.offer {
+    background: var(--green-light);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 0 120px 120px;
+}
+
+/* Левая картинка (девушка + точки + квадрат) */
+.offer-img {
+    width: 460px;              /* ← ЭТО размер всей композиции */
+    height: auto;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* Правая часть */
+.offer-right {
+    max-width: 540px;
+    flex-shrink: 0;
+}
+
+.offer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 22px;
+}
+
+.offer-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--green-dark);
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* Таймер */
+.timer {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.time-box {
+    background: #ffffff;
+    padding: 16px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 75px;
+    min-height: 75px;
+}
+
+.time-num {
+    font-family: 'Poppins', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1;
+}
+
+.time-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    color: var(--green-dark);
+    margin-top: 3px;
+}
+
+/* Кнопка */
+.buy-btn {
+    background: var(--green-btn);
+    color: #fff;
+    border: none;
+    padding: 18px 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.buy-btn:hover {
+    background: #174a2e;
+}
