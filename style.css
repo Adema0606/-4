@@ -27,8 +27,6 @@ body {
     color: var(--text-dark);
     background: #fff;
     line-height: 1.5;
-    height: 100vh;        /* ← высота = высота экрана */
-    overflow: hidden;     /* ← запрет прокрутки */
 }
 
 h1, h2, h3 {
@@ -45,7 +43,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 100px;              /* ← уменьшил с 174px, чтобы не прилипало */
+    padding: 0 100px;           
     height: 100px;
     background: var(--green-bg);
 }
@@ -54,7 +52,7 @@ header {
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
-    font-weight: 1000;              /* ← 900 вместо 700 = жирнее */
+    font-weight: 1000;            
     color: var(--green-dark);
     line-height: 1;
     letter-spacing: -0.5px;
@@ -68,8 +66,8 @@ header {
 }
 
 .menu a {
-    font-size: 15px;               /* ← было 13px, стало 15px */
-    font-weight: 500;              /* ← жирнее */
+    font-size: 15px;               
+    font-weight: 500;             
     letter-spacing: 2px;
     color: var(--green-dark);
     transition: opacity 0.2s;
@@ -81,7 +79,7 @@ header {
     display: flex;
     align-items: center;
     gap: 30px;
-    margin-right: 120px;   /* ← ПОЛОЖИТЕЛЬНОЕ число = сдвиг ВЛЕВО */
+    margin-right: 120px;   
 }
 
 .cart {
@@ -117,7 +115,7 @@ header {
 /* Кнопка LOGIN — рамка жирнее */
 .login-btn {
     background: transparent;
-    border: 2px solid var(--green-dark);   /* ← было 1.5px, стало 2px */
+    border: 2px solid var(--green-dark);   
     color: var(--green-dark);
     padding: 8px 30px;
     font-family: 'Poppins', sans-serif;
@@ -136,10 +134,10 @@ header {
 /* ========== HERO ========== */
 .hero {
     display: flex;
-    align-items: flex-start;        /* ← фото и текст начинаются с одной линии сверху */
+    align-items: flex-start;        
     justify-content: space-between;
     gap: 200px;
-    padding: 40px 210px 40px;       /* ← сверху 60px = общий отступ для обоих */
+    padding: 40px 210px 40px;     
     background: var(--green-bg);
     min-height: calc(100vh - 100px);
 }
@@ -148,7 +146,6 @@ header {
 .hero-text {
     max-width: 520px;
     flex-shrink: 0;
-    /* padding-top убран — оба блока стартуют с одной линии */
 }
 
 .hero-text h1 {
@@ -194,17 +191,14 @@ header {
     flex-shrink: 0;
 }
 
-
-/* Фото — уменьшено, пропорции сохранены */
 .hero-photo {
     width: 410px;                   
     height: 530px;                   
     object-fit: cover;
     display: block;
-    border-radius: 120px 20px 120px 20px;   /* ← закругления сохранены, чуть уменьшены пропорционально */
+    border-radius: 120px 20px 120px 20px;   
 }
 
-/* Точки — уменьшила до 80px */
 .dots {
     position: absolute;
     width: 90px;                         
@@ -213,14 +207,211 @@ header {
     z-index: 2;
 }
 
-/* Точки СПРАВА — вплотную к фото */
 .dots-1 {
     top: 20%;
     right: 10px;
 } 
 
-/* Точки СЛЕВА СНИЗУ */
 .dots-2 {
     bottom: 10%;
     left: 10px;
+}
+
+
+/* ========== BEST SELLING ========== */
+.best-selling {
+    background: #ffffff;
+    padding: 80px 60px 100px;
+    text-align: center;
+}
+
+/* Заголовок "Best selling" */
+.best-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 12px;
+}
+
+/* Подзаголовок под ним */
+.best-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 60px;
+}
+
+/* Сетка 3 карточки в ряд */
+.best-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+}
+
+/* Карточка */
+.best-card {
+    text-align: center;
+}
+
+/* Картинка товара — пропорция 4:5 (вертикальная) */
+.best-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    margin-bottom: 22px;
+    background: #f2f2f2;
+}
+
+/* Название товара */
+.best-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+/* Цена | рейтинг ★ */
+.best-meta {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.best-meta .divider {
+    color: #ccc;
+    margin: 0 5px;
+}
+
+.best-meta .star {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Кнопка "See all →" */
+.see-all-btn {
+    background: transparent;
+    border: 1.5px solid var(--text-dark);
+    color: var(--text-dark);
+    padding: 14px 45px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+}
+
+.see-all-btn .arrow {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.see-all-btn:hover {
+    background: var(--text-dark);
+    color: #fff;
+}
+/* ========== OUR PRODUCTS ========== */
+.products {
+    background: #ffffff;
+    padding: 80px 80px 100px;
+    text-align: center;
+}
+
+/* Заголовок "Our products" */
+.products-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 40px;
+}
+
+/* Фильтры: SALE | HOT | NEW ARRIVALS | ACCESSORIES */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.filters a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #555;
+    padding-bottom: 8px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+/* Активный фильтр HOT — подчёркнут */
+.filters a.active,
+.filters a:hover {
+    color: var(--green-dark);
+    border-bottom-color: var(--green-dark);
+}
+
+/* Сетка 4 колонки */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Карточка товара */
+.product-card {
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;               
+    aspect-ratio: 4 / 5;         
+    object-fit: cover;           
+    object-position: center top;  
+    margin-bottom: 22px;
+    background: #f2f2f2;
+}
+
+
+.product-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+/* Цена | рейтинг ★ */
+.product-meta {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.product-meta span {
+    margin: 0 10px;
+    color: #aaa;
+}
+
+.product-meta .star {
+    color: #f5b400;        
+    margin-left: 5px;
+    font-size: 16px;
 }
